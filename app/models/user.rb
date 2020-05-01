@@ -4,9 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  private
-
-  def after_sign_up_path_for(resource)
-     redirect_to root_path
-  end
+  has_many :questions, :dependent => :delete_all
+  has_many :answers, :dependent => :delete_all
+  has_many :topics, :dependent => :delete_all
 end

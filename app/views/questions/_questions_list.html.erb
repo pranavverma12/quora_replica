@@ -1,0 +1,31 @@
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>User</th>
+      <th>Topic</th>
+      <th>Answers Count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= link_to question.description, question %></td>
+        <td><%= question.user_id %></td>
+        <td><%= question.topic.name %></td>
+        <td><%= link_to question.answers.count, answers_path(:question_id => question.id) %></td>
+        <% if current_user == question.user %>
+          <td><%= link_to 'Edit', edit_question_path(question) %></td>
+          <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+        <td><%= link_to 'Add Answer', new_answer_path(:question_id => question.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question', new_question_path %>

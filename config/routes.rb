@@ -1,6 +1,19 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  resources :answers
+  
+  resources :questions
+
+  resources :topics
+
+  resources :users, only: [:index, :show] 
+  # do
+  #   member do
+  #     get :following, :followers
+  #   end
+  # end
+  
   root to: "home#index"
 
   devise_scope :user do

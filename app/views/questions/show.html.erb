@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @question.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @question.user_id %>
+</p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @question.topic_id %>
+</p>
+
+<p>
+  <strong>Answers:</strong>
+  <%= @question.answers&.pluck(:description) %>
+</p>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', root_path %> |
+<td><%= link_to 'Add Answer', answers_path(:question_id => @question.id) %></td>

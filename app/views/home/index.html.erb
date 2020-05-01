@@ -6,3 +6,11 @@
   <%= link_to "Sign In", new_user_session_path %>
   <%= link_to  "Sign Up", new_user_registration_path %>
 <% end %>
+
+<%= render 'questions/questions_list' %>
+
+<%= link_to 'Add new Topic', new_topic_path %>
+
+<%= link_to 'All Topics', topics_path %>
+
+<%= link_to 'All Users', users_path %>

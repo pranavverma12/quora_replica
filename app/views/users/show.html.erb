@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Questions:</strong>
+  <%= question_list(@user) %>
+</p>
+
+<p>
+  <strong>Answers:</strong>
+  <%= answers_list(@user) %>
+</p>
+
+<p>
+  <strong>Topics:</strong>
+  <%= topics_list(@user) %>
+</p>
+
+
+<%= link_to 'Back', root_path %>
